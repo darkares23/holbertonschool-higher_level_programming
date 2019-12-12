@@ -7,4 +7,3 @@ if __name__ == "__main__":
             continue
         sum += int(sys.argv[i])
     print("{:d}".format(sum))
-	
