@@ -7,7 +7,8 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i = 0, buffer[12], mid_len, j;
+	int buffer[12];
+	unsigned int i = 0, mid_len, j;
 	listint_t *temp = *head;
 
 	if (*head == NULL || head == NULL)
