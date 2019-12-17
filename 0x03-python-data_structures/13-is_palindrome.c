@@ -7,23 +7,27 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i = 0, buffer[12], mid_len, j;
+	int buff[12];
 	listint_t *temp = *head;
+	int i, j, k;
 
-	if (*head == NULL || head == NULL)
+	if (temp == NULL)
 		return (1);
-		
+	i = 0;
+	/* populate a list to compare and count number of elements */
 	while (temp)
 	{
-		buffer[i] = temp->n;
+		buff[i] = temp->n;
 		temp = temp->next;
 		i++;
 	}
-	mid_len = i + 1 / 2;
-	i -= 1;
-	for (j = 0; j < mid_len; i--, j++)
+	/* find middle of list of numbers */
+	k = (i + 1) / 2;
+	i = i - 1;
+	/* compare front to back of list until middle is reached */
+	for (j = 0; j < k; j++, i--)
 	{
-		if (buffer[j] != buffer[i])
+		if (buff[j] != buff[i])
 			return (0);
 	}
 	return (1);
