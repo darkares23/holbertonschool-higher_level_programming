@@ -8,11 +8,15 @@
 int is_palindrome(listint_t **head)
 {
 	int i = 0, buffer[12], mid_len, j;
+	listint_t *temp = *head;
 
-	while (*head != NULL)
+	if (*head == NULL || head == NULL)
+		return (1);
+		
+	while (temp)
 	{
-		buffer[i] = (*head)->n;
-		*head = (*head)->next;
+		buffer[i] = temp->n;
+		temp = temp->next;
 		i++;
 	}
 	mid_len = i + 1 / 2;
