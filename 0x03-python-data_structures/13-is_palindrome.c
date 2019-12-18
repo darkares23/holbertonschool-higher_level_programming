@@ -7,7 +7,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int buffer[12];
+	int buffer[1024];
 	unsigned int i = 0, mid_len, j;
 	listint_t *temp = *head;
 
