@@ -6,5 +6,5 @@ def square_matrix_simple(matrix=[]):
     new = matrix.copy()
     for row in matrix:
         new[i] = list(map(pow2, row))
-        i+=1
+        i += 1
     return new
