@@ -33,5 +33,19 @@ class Node:
 
 
 class SinglyLinkedList:
+    """
+    Methods of the SinglyLinkedListClass
+    """
+
     def __init__(self):
         self.__head = None
+
+    def insert_node(self, value):
+        """insert node in sorted order"""
+        tmp = self.__head
+        new = Node(value, self.__head)
+        if tmp is None:
+            self.__head = new
+            return
+        if tmp.data > value:
+            new.next_node = tmp
