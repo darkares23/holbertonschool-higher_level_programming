@@ -44,8 +44,12 @@ class SinglyLinkedList:
         """insert node in sorted order"""
         tmp = self.__head
         new = Node(value, self.__head)
+
         if tmp is None:
             self.__head = new
             return
         if tmp.data > value:
             new.next_node = tmp
+            self.__head = new
+            return
+        
