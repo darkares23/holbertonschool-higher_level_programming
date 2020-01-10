@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 import math
-"""
-Magic class circle
-"""
 
 
 class MAgicClass:
