@@ -1,8 +1,11 @@
-#!/usr/bin/python3
-import math
+ #!/usr/bin/python3
+"""
+  Circle Math
+"""
 
 
-class MAgicClass:
+class MagicClass:
+    """ Magic Circle """
     def __init__(self, radius):
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
@@ -10,7 +13,9 @@ class MAgicClass:
         self.__radius = radius
 
     def area(self):
-        return (self.__radius ** 2 * math.pi)
+        """ Area Math """
+        return ((self.__radius) ** 2) * math.pi
 
     def circumference(self):
-        return (2 * math.pi * self.__radius)
+        """ Circum Math """
+        return 2 * math.pi * self.__radius
