@@ -2,8 +2,12 @@
 """
 Square Module
 """
+
+
 def print_square(size):
     """Print square func"""
+    if type(size) == bool:
+        raise TypeError("size must be an integer")
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
