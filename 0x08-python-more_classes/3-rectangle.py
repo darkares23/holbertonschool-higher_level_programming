@@ -61,5 +61,6 @@ class Rectangle:
                 rectangle_string += ("#")
             if row != self.__height:
                 rectangle_string += "\n"
+        rectangle_string = rectangle_string[:-1]
         str(column)
         return rectangle_string

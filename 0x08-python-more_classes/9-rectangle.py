@@ -79,6 +79,7 @@ class Rectangle:
                 rectangle_string += str(self.print_symbol)
             if row != self.__height:
                 rectangle_string += "\n"
+        rectangle_string = rectangle_string[:-1]
         str(column)
         return rectangle_string
 
@@ -90,3 +91,8 @@ class Rectangle:
         """ Prints bye when del is exec"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @classmethod
+    def square(cls, size=0):
+        """return new instance of rectangle"""
+        return Rectangle(size, size)
