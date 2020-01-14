@@ -12,3 +12,24 @@
 Traceback (most recent call last):
 	...
 ValueError: setting an array element with a sequence.
+
+# test a non list
+>>> matrix_mul("test", [[1, 2], [3, 4]])
+Traceback (most recent call last):
+	...
+ValueError: Scalar operands are not allowed, use '*' instead
+
+# test a non list of lists
+# (using non ints b/c list of lists should be triggered first)
+>>> matrix_mul(["test", "str"], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+	...
+TypeError: invalid data type for einsum
+
+# test a list of lists with non ints
+>>> matrix_mul([[1, 2], ['c', "holb"]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+	...
+TypeError: invalid data type for einsum
+
+# test non-rectangle matrix
