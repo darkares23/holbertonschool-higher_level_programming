@@ -28,12 +28,14 @@ with the message a must be an integer or b must be an integer:
     89
 
 ‘a’ must be integers or float:
-    >>> add_integer(-----9, -----9)
-    -18
+    >>> add_integer(a, 9)
+    Traceback (most recent call last):
+    NameError: name 'a' is not defined
 
 ‘b’ must be integers or float:
     >>> add_integer(3.5, 6)
     9
+
 
 ‘a’ must be integers or float:
     >>> add_integer(None)
