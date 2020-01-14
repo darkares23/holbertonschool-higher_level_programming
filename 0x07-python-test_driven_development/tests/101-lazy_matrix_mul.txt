@@ -7,12 +7,6 @@
 [[ 7 10]
  [15 22]]
 
- # test non-rectangle matrix
->>> matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
-Traceback (most recent call last):
-	...
-ValueError: setting an array element with a sequence.
-
 # test a non list
 >>> matrix_mul("test", [[1, 2], [3, 4]])
 Traceback (most recent call last):
@@ -33,3 +27,8 @@ Traceback (most recent call last):
 TypeError: invalid data type for einsum
 
 # test non-rectangle matrix
+>>> matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+	...
+ValueError: setting an array element with a sequence.
+© 2020 GitHub, Inc.
