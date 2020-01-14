@@ -36,11 +36,6 @@ with the message a must be an integer or b must be an integer:
     9
 
 ‘a’ must be integers or float:
-    >>> add_integer()
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-‘a’ must be integers or float:
     >>> add_integer(None)
     Traceback (most recent call last):
     TypeError: a must be an integer
