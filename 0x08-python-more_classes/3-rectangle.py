@@ -4,6 +4,19 @@ class Rectangle:
         self.__width = width
         self.__height = height
 
+    def __str__(self):
+        rectangle_string = ""
+        if self.__width == 0 or self.__height == 0:
+            return rectangle_string
+        for row in range(self.__height):
+            for column in range(self.__width):
+                rectangle_string += ("#")
+            if row != self.__height:
+                rectangle_string += "\n"
+        rectangle_string = rectangle_string[:-1]
+        str(column)
+        return rectangle_string
+
     @property
     def width(self):
         return self.__width
@@ -38,16 +51,3 @@ class Rectangle:
             return(0)
         else:
             return((2 * self.__width) + (2 * self.__height))
-
-    def __str__(self):
-        rectangle_string = ""
-        if self.__width == 0 or self.__height == 0:
-            return rectangle_string
-        for row in range(self.__height):
-            for column in range(self.__width):
-                rectangle_string += ("#")
-            if row != self.__height:
-                rectangle_string += "\n"
-        rectangle_string = rectangle_string[:-1]
-        str(column)
-        return rectangle_string
