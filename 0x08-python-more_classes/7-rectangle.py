@@ -44,9 +44,17 @@ class Rectangle():
         self.__height = value
 
     def __str__(self):
-        if self.__height == 0 or self.__width == 0:
-            return ''
-        return '\n'.join( str(self.print_symbol) * self.__width for _ in range(self.__height))
+        rectangle_string = ""
+        if self.__width == 0 or self.__height == 0:
+            return rectangle_string
+        for row in range(self.__height):
+            for column in range(self.__width):
+                rectangle_string += str(self.print_symbol)
+            if row != self.__height:
+                rectangle_string += "\n"
+        rectangle_string = rectangle_string[:-1]
+        str(column)
+        return rectangle_string
 
     def __repr__(self):
         return 'Rectangle({}, {})'.format(self.width, self.height)
