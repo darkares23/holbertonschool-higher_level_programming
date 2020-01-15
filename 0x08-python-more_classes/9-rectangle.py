@@ -67,16 +67,12 @@ class Rectangle:
         return string
 
     def __repr__(self):
-        """ string reresentation of square instance """
-        w = str(self.__width)
-        h = str(self.__height)
-        return "Rectangle(" + w + ", " + h + ")"
+        return 'Rectangle({}, {})'.format(self.width, self.height)
 
     def __del__(self):
-        """ messsage for deletion of a square """
+        print('Bye rectangle...')
         Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
-    
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """ compares two rectangles """
