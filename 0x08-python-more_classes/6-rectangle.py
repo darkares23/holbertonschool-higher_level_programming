@@ -1,28 +1,18 @@
 #!/usr/bin/python3
-"""Rectangule module
-"""
-
-
 class Rectangle:
-    """Define a Rectangle class
-    """
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """init private intance atributes
-        """
         self.__width = width
         self.__height = height
         Rectangle.number_of_instances += 1
 
     @property
     def width(self):
-        """Get method width """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set width """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -32,12 +22,10 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get method width """
         return self.__width
 
     @height.setter
     def height(self, value):
-        """Set height """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -55,7 +43,6 @@ class Rectangle:
             return((2 * self.__width) + (2 * self.__height))
 
     def __str__(self):
-        """prints rectangle"""
         rectangle_string = ""
         if self.__width == 0 or self.__height == 0:
             return rectangle_string
