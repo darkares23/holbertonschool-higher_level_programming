@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 def magic_string(x=[]):
-	X += ["Holberton"]
+	x += ["Holberton"]
 	return (", ".join(x))
 
