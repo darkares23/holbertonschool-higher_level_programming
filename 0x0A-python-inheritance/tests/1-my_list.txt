@@ -26,3 +26,41 @@ True
 >>> my_list.append(23)
 >>> print(my_list)
 [5, -2, -3, 23]
+
+* print_sorted method works properly with append
+>>> my_list = MyList([])
+>>> my_list.append(1)
+>>> my_list.append(132)
+>>> my_list.append(832)
+>>> my_list.print_sorted()
+[1, 132, 832]
+
+* print_sorted method works properly with append
+>>> my_list = MyList([])
+>>> my_list.append(-1)
+>>> my_list.append(-132)
+>>> my_list.append(-832)
+>>> my_list.print_sorted()
+[-832, -132, -1]
+
+* print_sorted method works properly with append
+>>> my_list = MyList([])
+>>> my_list.append(-1)
+>>> my_list.append(-132)
+>>> my_list.append(-832)
+>>> my_list.print_sorted()
+[-832, -132, -1]
+
+* check print_sorted for empty list
+>>> my_list = MyList([])
+>>> my_list.print_sorted()
+[]
+
+* check print_sorted returns a new list
+>>> my_list = MyList([2, 20, -4, 5])
+>>> print(my_list)
+[2, 20, -4, 5]
+>>> my_list.print_sorted()
+[-4, 2, 5, 20]
+>>> print(my_list)
+[2, 20, -4, 5]
