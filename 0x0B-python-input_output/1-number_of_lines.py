@@ -4,5 +4,5 @@ def number_of_lines(filename=""):
     with open(filename, encoding="utf-8") as f:
         for l in f:
             num_lines += 1
-        str(l)
-        return num_lines
+    str(l)
+    return num_lines
