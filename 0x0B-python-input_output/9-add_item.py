@@ -9,8 +9,9 @@ if __name__ == "__main__":
         data = load_from_json_file("add_item.json")
     except:
         new_obj = []
-        open("add_item.json", 'w')
+        f =open("add_item.json", 'w')
         save_to_json_file(new_obj, "add_item.json")
+        f.close()
 
     data = load_from_json_file("add_item.json")
     for i in range(1, len(sys.argv)):
