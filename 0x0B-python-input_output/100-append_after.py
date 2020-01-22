@@ -7,6 +7,5 @@ def append_after(filename="", search_string="", new_string=""):
                 string += line + new_string
             else:
                 string += line
-        f.close()
     with open(filename, mode='w') as f:
         f.write(string)
