@@ -72,9 +72,14 @@ class Rectangle(Base):
 
     def display(self):
         """print the rectangle using #"""
-        if self.__height == 0 or self.__width == 0:
+        for y in range(self.__y):
             print()
-        print ('\n'.join('#' * self.__width for _ in range(self.__height)))
+        for row in range(self.__height):
+            for x in range(self.__x):
+                print(" ", end="")
+            for col in range(self.__width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         string = "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
@@ -84,5 +89,18 @@ class Rectangle(Base):
 
         return string
 
-    def display(self):
-        for 
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        if args:
+            argsList = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, argsList[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        dic_string = {'id': self.id, 'width': self.width,
+                      'height': self.height, 'x': self.x,
+                      'y': self.y}
+        return dic_string
