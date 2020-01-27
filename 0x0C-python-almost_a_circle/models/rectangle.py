@@ -1,10 +1,14 @@
 #!/usr/bin/python3
+"""Rectangle class
+"""
+
+
 from models.base import Base
 import json
 
 
 class Rectangle(Base):
-
+	"""Rectangle class """
     __nb_objects = 0
 
     def __init__(self, width, height, x=0, y=0, id=None):
