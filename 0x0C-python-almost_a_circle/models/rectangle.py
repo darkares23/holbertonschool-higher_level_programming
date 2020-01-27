@@ -28,17 +28,6 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
-    def checker(self, value, param_name):
-        """
-        hp
-        """
-        if type(value is not int:
-            raise TypeError(param_name + "must be an integer")
-        if value <= 0 and param_name in ("width", "height"):
-            raise ValueError(param + "must be > 0")
-        if value < 0 and param_name in ("x", "y"):
-            raise ValueError(param_name + "must be >= 0")
-
     @property
     def width(self):
         """
@@ -110,6 +99,17 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def checker(self, value, param_name):
+        """
+        hp
+        """
+        if type(value) is not int:
+            raise TypeError(param_name + "must be an integer")
+        if value <= 0 and param_name in ("width", "height"):
+            raise ValueError(param + "must be > 0")
+        if value < 0 and param_name in ("x", "y"):
+            raise ValueError(param_name + "must be >= 0")
 
     def area(self):
         """
