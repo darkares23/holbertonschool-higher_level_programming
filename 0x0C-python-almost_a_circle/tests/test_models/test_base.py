@@ -29,3 +29,85 @@ class TestBaseClassCreation(unittest.TestCase):
         self.assertEqual(bo.id, 1)
         bo = Base(None)
         self.assertEqual(bo.id, 2)
+    
+    def test_id_string(self):
+        bo = Base("st")
+        self.assertEqual(bo.id, "st")
+        bo = Base("st2")
+        self.assertEqual(bo.id, "st2")
+
+    def test_type(self):
+        """ Test type and instance """
+
+        b = Base()
+        self.assertEqual(type(b), Base)
+        self.assertTrue(isinstance(b, Base))
+
+    def test_to_json_string(self):
+        """ Test to_json_string functionality """
+
+        d = {'id': 1, 'x': 2, 'y': 3, 'width': 4, 'height': 5}
+        json_d = Base.to_json_string([d])
+
+        self.assertTrue(isinstance(d, dict))
+
+        self.assertTrue(isinstance(json_d, str))
+
+        self.assertCountEqual(
+            json_d, '{["id": 1, "x": 2, "y": 3, "width": 4, "height": 5]}')
+
+        json_d_1 = Base.to_json_string(None)
+        self.assertEqual(json_d_1, "[]")
+
+        err = ("to_json_string() missing 1 required positional argument: " +
+               "'list_dictionaries'")
+        with self.assertRaises(TypeError) as e:
+            Base.to_json_string()
+        self.assertEqual(err, str(e.exception))
+
+        err = "to_json_string() takes 1 positional argument but 2 were given"
+        with self.assertRaises(TypeError) as e:
+            Base.to_json_string([{1, 2}], [{3, 4}])
+        self.assertEqual(err, str(e.exception))
+
+    def test_save_to_file(self):
+        """Test class method save_to_file with normal types."""
+        with self.assertRaises(AttributeError) as e:
+            Base.save_to_file([Base(1), Base(2)])
+        self.assertEqual(
+             "'Base' object has no attribute 'to_dictionary'", str(
+                e.exception))
+
+    def test_load_from_file(self):
+        """Test load_from_file functionality """
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+
+        if os.path.exists("Base.json"):
+            os.remove("Base.json")
+
+        r_output = Rectangle.load_from_file()
+        self.assertEqual(r_output, [])
+
+        sq_output = Square.load_from_file()
+        self.assertEqual(sq_output, [])
+
+        er = "load_from_file() takes 1 positional argument but 2 were given"
+        with self.assertRaises(TypeError) as e:
+            list_rectangles_output = Rectangle.load_from_file("str")
+        self.assertEqual(er, str(e.exception))
+
+    def test_create(self):
+        """ Test create functionality """
+        with self.assertRaises(TypeError) as e:
+            err = Rectangle.create("str")
+        self.assertEqual(
+            "create() takes 1 positional argument but 2 were given", str(
+                e.exception))
+
+ 
+if __name__ == '__main__':
+    unittest.main()
