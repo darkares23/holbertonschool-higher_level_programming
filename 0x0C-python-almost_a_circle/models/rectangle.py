@@ -18,10 +18,26 @@ class Rectangle(Base):
         Constructor
         """
         super().__init__(id)
+
+        self.checker(height, "height")
+        self.checker(widht, "width")
+        self.checker(height, "x")
+        self.checker(height, "y")
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
+
+    def checker(self, value, param_name):
+        """
+        hp
+        """
+        if type(value is not int:
+            raise TypeError(param_name + "must be an integer")
+        if value <= 0 and param_name in ("width", "height"):
+            raise ValueError(param + "must be > 0")
+        if value < 0 and param_name in ("x", "y"):
+            raise ValueError(param_name + "must be >= 0")
 
     @property
     def width(self):
