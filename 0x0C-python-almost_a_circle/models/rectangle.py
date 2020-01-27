@@ -41,7 +41,7 @@ class Rectangle(Base):
         """
         set
         """
-        self.checker(param_name, 'width')
+        self.checker(value, 'width')
         self.__width = value
 
     @property
@@ -56,7 +56,7 @@ class Rectangle(Base):
         """
         set
         """
-        self.checker(param_name, 'height')
+        self.checker(value, 'height')
         self.__height = value
 
     @property
@@ -71,7 +71,7 @@ class Rectangle(Base):
         """
         set
         """
-        self.checker(param_name, 'x')
+        self.checker(value, 'x')
         self.__c = value
 
     @property
@@ -86,7 +86,7 @@ class Rectangle(Base):
         """
         set
         """
-        self.checker(param_name, 'y')
+        self.checker(value, 'y')
         self.__y = value
 
     def checker(self, value, param):
