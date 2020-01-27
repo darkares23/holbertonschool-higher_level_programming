@@ -89,15 +89,15 @@ class Rectangle(Base):
         self.checker(param_name, 'y')
         self.__y = value
 
-    def checker(self, value, param_name):
+    def checker(self, value, param):
         """
         hp
         """
         if type(value) is not int:
-            raise TypeError(param + ' must be an integer’)
-        if value <= 0 and param in (‘width’, ‘height’):
+            raise TypeError(para + ' must be an integer')
+        if value <= 0 and param in ('width', 'height'):
             raise ValueError(param + ' must be > 0')
-        if value < 0 and param in (‘x’, ‘y’):
+        if value < 0 and param in ('x', 'y'):
             raise ValueError(param + ' must be >= 0')
 
     def area(self):
