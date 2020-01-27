@@ -8,11 +8,11 @@ import json
 
 
 class Rectangle(Base):
-	"""Rectangle class """
+    """Rectangle class """
     __nb_objects = 0
 
     def __init__(self, width, height, x=0, y=0, id=None):
-		"""Constructor"""
+        """Constructor"""
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -21,12 +21,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-		"""get"""
+        """get"""
         return self.__width
 
     @width.setter
     def width(self, value):
-		"""set"""
+        """set"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -35,12 +35,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-		"""get"""
+        """get"""
         return self.__height
 
     @height.setter
     def height(self, value):
-		"""set"""
+        """set"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -49,12 +49,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-		"""get"""
+        """get"""
         return self.__x
 
     @x.setter
     def x(self, value):
-		"""set"""
+        """set"""
         if type(value) is not int:
             raise TypeError("x must be an interger")
         if value < 0:
@@ -63,12 +63,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-		"""get"""
+        """get"""
         return self.__y
 
     @y.setter
     def y(self, value):
-		"""set"""
+        """set"""
         if type(value) is not int:
             raise TypeError("y must be an interger")
         if value < 0:
@@ -76,11 +76,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-		"""get"""
+        """get"""
         return self.__height * self.__width
 
     def display(self):
-		"""set"""
+        """set"""
         for y in range(self.__y):
             print()
         for row in range(self.__height):
@@ -91,7 +91,7 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-		"""str Constructor"""
+        """str Constructor"""
         string = "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
                                                   self.id, self.x,
                                                   self.y, self.width,
@@ -100,7 +100,7 @@ class Rectangle(Base):
         return string
 
     def update(self, *args, **kwargs):
-		"""Constructor"""
+        """Constructor"""
         if args:
             argsList = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
@@ -110,7 +110,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-		"""Constructor"""
+        """Constructor"""
         dic_string = {'id': self.id, 'width': self.width,
                       'height': self.height, 'x': self.x,
                       'y': self.y}
