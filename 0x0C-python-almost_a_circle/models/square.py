@@ -15,13 +15,12 @@ class Square(Rectangle):
         """
         Constructor
         """
-        super().__init__(id=id, x=x, y=y, width=size, height=size)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """
         Constructor
         """
-        super()
         string = "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
                                                self.id, self.x,
                                                self.y, self.width)
