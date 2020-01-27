@@ -94,7 +94,7 @@ class Rectangle(Base):
         hp
         """
         if type(value) is not int:
-            raise TypeError(para + ' must be an integer')
+            raise TypeError(param + ' must be an integer')
         if value <= 0 and param in ('width', 'height'):
             raise ValueError(param + ' must be > 0')
         if value < 0 and param in ('x', 'y'):
