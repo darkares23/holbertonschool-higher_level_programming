@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-"""
-Rectangle class file
-"""
 from models.base import Base
 import json
 
 
 class Rectangle(Base):
-    """Rectangle representation class"""
 
     __nb_objects = 0
 
@@ -67,11 +63,9 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Area of the rectangle"""
         return self.__height * self.__width
 
     def display(self):
-        """print the rectangle using #"""
         for y in range(self.__y):
             print()
         for row in range(self.__height):
@@ -90,7 +84,6 @@ class Rectangle(Base):
         return string
 
     def update(self, *args, **kwargs):
-        """assigns an argument to each attribute"""
         if args:
             argsList = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
