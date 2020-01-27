@@ -19,8 +19,8 @@ class Rectangle(Base):
         """
         super().__init__(id)
 
-        self.checker(height, 'height')
         self.checker(width, 'width')
+        self.checker(height, 'height')
         self.checker(x, 'x')
         self.checker(y, 'y')
 
