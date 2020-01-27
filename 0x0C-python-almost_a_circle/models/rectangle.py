@@ -19,10 +19,11 @@ class Rectangle(Base):
         """
         super().__init__(id)
 
-        self.checker(height, "height")
-        self.checker(widht, "width")
-        self.checker(height, "x")
-        self.checker(height, "y")
+        self.checker(height, 'height')
+        self.checker(width, 'width')
+        self.checker(x, 'x')
+        self.checker(y, 'y')
+
         self.__width = width
         self.__height = height
         self.__x = x
@@ -40,10 +41,7 @@ class Rectangle(Base):
         """
         set
         """
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        self.checker(param_name, 'width')
         self.__width = value
 
     @property
@@ -58,10 +56,7 @@ class Rectangle(Base):
         """
         set
         """
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
+        self.checker(param_name, 'height')
         self.__height = value
 
     @property
@@ -76,10 +71,7 @@ class Rectangle(Base):
         """
         set
         """
-        if type(value) is not int:
-            raise TypeError("x must be an interger")
-        if value < 0:
-            raise ValueError("x must be >= 0")
+        self.checker(param_name, 'x')
         self.__c = value
 
     @property
@@ -94,10 +86,7 @@ class Rectangle(Base):
         """
         set
         """
-        if type(value) is not int:
-            raise TypeError("y must be an interger")
-        if value < 0:
-            raise ValueError("y must be >= 0")
+        self.checker(param_name, 'y')
         self.__y = value
 
     def checker(self, value, param_name):
@@ -105,11 +94,11 @@ class Rectangle(Base):
         hp
         """
         if type(value) is not int:
-            raise TypeError(param_name + "must be an integer")
-        if value <= 0 and param_name in ("width", "height"):
-            raise ValueError(param + "must be > 0")
-        if value < 0 and param_name in ("x", "y"):
-            raise ValueError(param_name + "must be >= 0")
+            raise TypeError(param_name + ' must be an integer')
+        if value <= 0 and param_name in ('width', 'height'):
+            raise ValueError(param_name + ' must be > 0')
+        if value < 0 and param_name in ('x', 'y'):
+            raise ValueError(param_name + ' must be >= 0')
 
     def area(self):
         """
