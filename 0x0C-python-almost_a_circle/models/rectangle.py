@@ -94,11 +94,11 @@ class Rectangle(Base):
         hp
         """
         if type(value) is not int:
-            raise TypeError(param_name + ' must be an integer')
-        if value <= 0 and param_name in ('width', 'height'):
-            raise ValueError(param_name + ' must be > 0')
-        if value < 0 and param_name in ('x', 'y'):
-            raise ValueError(param_name + ' must be >= 0')
+            raise TypeError(param + ' must be an integer’)
+        if value <= 0 and param in (‘width’, ‘height’):
+            raise ValueError(param + ' must be > 0')
+        if value < 0 and param in (‘x’, ‘y’):
+            raise ValueError(param + ' must be >= 0')
 
     def area(self):
         """
