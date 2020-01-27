@@ -8,6 +8,7 @@ class Testrectangle(unittest.TestCase):
     """ """
 
     def test_subclass(self):
+		""" """
         self.assertTrue( issubclass(Rectangle, Base))
 
     def test_parameters(self):
