@@ -72,7 +72,7 @@ class Rectangle(Base):
         set
         """
         self.checker(value, 'x')
-        self.__c = value
+        self.__x = value
 
     @property
     def y(self):
