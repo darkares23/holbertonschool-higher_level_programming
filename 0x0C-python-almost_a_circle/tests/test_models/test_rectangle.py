@@ -8,6 +8,7 @@ class Testrectangle(unittest.TestCase):
     """ """
 
     def test_subclass(self):
+        """ """
         self.assertTrue( issubclass(Rectangle, Base))
 
     def test_parameters(self):
@@ -16,13 +17,13 @@ class Testrectangle(unittest.TestCase):
         r2 = Rectangle(2, 10)
         r3 = Rectangle(10, 2, 0, 0, 12)
 
-        self.assertEqual(r1.id, 1)
+        self.assertEqual(r1.id, 4)
         self.assertEqual(r1.width, 10)
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
         self.assertEqual(r1.y, 0)
 
-        self.assertEqual(r2.id, 2)
+        self.assertEqual(r2.id, 5)
         self.assertEqual(r2.width, 2)
         self.assertEqual(r2.height, 10)
         self.assertEqual(r2.x, 0)

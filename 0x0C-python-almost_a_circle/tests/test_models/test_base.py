@@ -2,6 +2,8 @@
 """
 Module for unittests for the Base class
 """
+
+
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -13,24 +15,28 @@ class TestBaseClassCreation(unittest.TestCase):
     """Test class for Base class instantiation tests"""
 
     def test_id_positive(self):
+        """Test class for Base class instantiation tests"""
         bo = Base(23)
         self.assertEqual(bo.id, 23)
         bo = Base(34)
         self.assertEqual(bo.id, 34)
 
     def test_id_negative(self):
+        """Test class for Base class instantiation tests"""
         bo = Base(-4)
         self.assertEqual(bo.id, -4)
         bo = Base(-10)
         self.assertEqual(bo.id, -10)
 
     def test_id_none(self):
+        """Test class for Base class instantiation tests"""
         bo = Base()
         self.assertEqual(bo.id, 1)
         bo = Base(None)
         self.assertEqual(bo.id, 2)
     
     def test_id_string(self):
+        """Test class for Base class instantiation tests"""
         bo = Base("st")
         self.assertEqual(bo.id, "st")
         bo = Base("st2")

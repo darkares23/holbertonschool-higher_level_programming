@@ -1,18 +1,29 @@
 #!/usr/bin/python3
+"""Rectangle class
 """
-Rectangle class file
-"""
+
+
 from models.base import Base
 import json
 
 
 class Rectangle(Base):
-    """Rectangle representation class"""
-
+    """
+    Rectangle class
+    """
     __nb_objects = 0
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Constructor
+        """
         super().__init__(id)
+
+        self.checker(width, 'width')
+        self.checker(height, 'height')
+        self.checker(x, 'x')
+        self.checker(y, 'y')
+
         self.__width = width
         self.__height = height
         self.__x = x
@@ -20,58 +31,85 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """
+        get
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        """
+        set
+        """
+        self.checker(value, 'width')
         self.__width = value
 
     @property
     def height(self):
+        """
+        get
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
+        """
+        set
+        """
+        self.checker(value, 'height')
         self.__height = value
 
     @property
     def x(self):
+        """
+        get
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
-        if type(value) is not int:
-            raise TypeError("x must be an interger")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        self.__c = value
+        """
+        set
+        """
+        self.checker(value, 'x')
+        self.__x = value
 
     @property
     def y(self):
+        """
+        get
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
-        if type(value) is not int:
-            raise TypeError("y must be an interger")
-        if value < 0:
-            raise ValueError("y must be >= 0")
+        """
+        set
+        """
+        self.checker(value, 'y')
         self.__y = value
 
+    def checker(self, value, param):
+        """
+        hp
+        """
+        if type(value) is not int:
+            raise TypeError(param + ' must be an integer')
+        if value <= 0 and param in ('width', 'height'):
+            raise ValueError(param + ' must be > 0')
+        if value < 0 and param in ('x', 'y'):
+            raise ValueError(param + ' must be >= 0')
+
     def area(self):
-        """Area of the rectangle"""
+        """
+        get
+        """
         return self.__height * self.__width
 
     def display(self):
-        """print the rectangle using #"""
+        """
+        set
+        """
         for y in range(self.__y):
             print()
         for row in range(self.__height):
@@ -82,6 +120,9 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """
+        str Constructor
+        """
         string = "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
                                                   self.id, self.x,
                                                   self.y, self.width,
@@ -90,7 +131,9 @@ class Rectangle(Base):
         return string
 
     def update(self, *args, **kwargs):
-        """assigns an argument to each attribute"""
+        """
+        Constructor
+        """
         if args:
             argsList = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
@@ -100,6 +143,9 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """
+        Constructor
+        """
         dic_string = {'id': self.id, 'width': self.width,
                       'height': self.height, 'x': self.x,
                       'y': self.y}
