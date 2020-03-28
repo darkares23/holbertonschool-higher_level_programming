@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-ists all states with a name starting with N
-(upper N) from the database hbtn_0e_0_usa
+matches the argument. But this time,
+write one that is safe from MySQL injections!
 """
 import sys
 import MySQLdb
