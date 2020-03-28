@@ -20,7 +20,7 @@ if __name__ == '__main__':
     cursor_exe = connection.cursor()
     cursor_exe.execute('''
                         SELECT * FROM states
-                        WHERE states.name = '{}' ORDER BY id ASC
+                        WHERE states.name LIKE BINARY '{}' ORDER BY id ASC
                        '''.format(stateNameSearched))
     qRows = cursor_exe.fetchall()
     for rows in qRows:
