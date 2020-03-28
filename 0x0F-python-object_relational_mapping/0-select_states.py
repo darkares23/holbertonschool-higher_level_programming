@@ -2,23 +2,15 @@
 """
 lists all states from the database hbtn_0e_0_usa
 """
-import sys
+from sys import argv
 import MySQLdb
-
-if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    dbname = sys.argv[3]
-    connection = MySQLdb.Connect(host="localhost",
-                                 port=3306,
-                                 user=username,
-                                 passwd=password,
-                                 db=dbname,
-                                 charset="utf8")
-    cursor_exe = connection.cursor()
-    cursor_exe.execute("SELECT * FROM states ORDER BY id ASC")
-    qRows = cursor_exe.fetchall()
-    for rows in qRows:
-        print(rows)
-    cursor_exe.close()
-    connection.close()
+if __name__ == "__main__":
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
+    db.close()
