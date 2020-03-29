@@ -16,8 +16,10 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     ocurrency = session.query(State).filter(
         State.name.like("%a")).order_by(State.id).all()
-    for st in ocurrency:
-        print("{}: {}".format(st.id, st.name))
+
+    if ocurrency is not None:
+        for st in ocurrency:
+            print("{}: {}".format(st.id, st.name))
     else:
         print("Nothing")
     session.close()
