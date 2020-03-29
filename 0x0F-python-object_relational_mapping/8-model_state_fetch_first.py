@@ -17,4 +17,6 @@ if __name__ == '__main__':
     first = session.query(State).first()
     if first:
         print("{}: {}".format(first.id, first.name))
+    else:
+        print("nothing")
     session.close()
