@@ -19,3 +19,4 @@ if __name__ == '__main__':
             City, City.state_id == State.id).order_by(City.id):
         print("{}: ({}) {}".format(idx[0], idx[1], idx[2]))
     session.close()
+  
