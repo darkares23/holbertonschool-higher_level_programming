@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 """sends a post to the URL and prints the value"""
-import urllib.request
-import urllib.parse
 from sys import argv
+from urllib.request import Request, urlopen
+from urllib.parse import urlencode
 
 
 if __name__ == "__main__":
     def getEmail():
         """Post and print the response"""
-        data = urllib.parse.urlencode({'email': argv[2]})
+        url = argv[1]
+        values = {'email': argv[2]}
+
+        data = urlencode(values)
         data = data.encode('ascii')
-        req = urllib.request.Request(argv[1], data)
-        with urllib.request.urlopen(req) as res:
-            content = res.read()
-            print(content.decode('utf-8'))
+        req = Request(url, data)
+        with urlopen(req) as res:
+            content = res.read().decode('utf-8')
+            print(content)
