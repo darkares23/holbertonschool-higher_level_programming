@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-"""sends a post to the URL and prints the value"""
 from sys import argv
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
@@ -7,7 +6,6 @@ from urllib.parse import urlencode
 
 if __name__ == "__main__":
     def getEmail():
-        """Post and print the response"""
         url = argv[1]
         values = {'email': argv[2]}
 
