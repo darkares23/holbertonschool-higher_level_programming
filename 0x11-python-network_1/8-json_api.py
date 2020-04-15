@@ -7,7 +7,7 @@ if __name__ == "__main__":
     if len(argv) > 1:
         q = argv[1]
     else:
-        q = ''
+        q = ""
     try:
         _data = {'q': q}
         url = 'http://0.0.0.0:5000/search_user'
