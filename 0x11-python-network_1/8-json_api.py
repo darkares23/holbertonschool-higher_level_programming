@@ -10,8 +10,8 @@ if __name__ == "__main__":
         q = ''
     try:
         _data = {'q': q}
-        req = requests.post('http://0.0.0.0:5000/search_user', data=_data)
-        rq = req.json()
+        url = 'http://0.0.0.0:5000/search_user'
+        req = requests.post(url, data=_data).json()
         if len(req) == 0:
             print("No result")
             exit()
