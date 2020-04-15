@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Python script that fetches"""
 import urllib.request
-import sys
 
 
 def getStatus():
