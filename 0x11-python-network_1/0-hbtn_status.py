@@ -2,12 +2,12 @@
 """
 Python script that fetches https://intranet.hbtn.io/status
 """
-
 import urllib.request
 import sys
 
 
 def getStatus():
+    """a"""
     with urllib.request.urlopen('https://intranet.hbtn.io/status') as res:
         content = res.read()
         type_content = type(content)
