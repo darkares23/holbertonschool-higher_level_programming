@@ -14,7 +14,7 @@ if __name__ == "__main__":
         req = requests.post(url, data=_data).json()
         if len(req) == 0:
             print("No result")
-            exit()
+            break
         print ("[{}] {}".format(req.get('id'), req.get('name')))
     except ValueError:
         print("Not a valid JSON")
