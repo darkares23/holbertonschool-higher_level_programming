@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """takes in a URL and an email address,
 sends a POST request to the passed URL"""
-
-
 import requests
 from sys import argv
 
@@ -12,6 +10,7 @@ if __name__ == "__main__":
         q = argv[1]
     else:
         q = ""
+
     try:
         _data = {'q': q}
         url = 'http://0.0.0.0:5000/search_user'
