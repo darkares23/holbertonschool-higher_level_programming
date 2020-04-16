@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""s takes in a URL and an email address,
+"""takes in a URL and an email address,
 sends a POST request to the passed URL"""
 import requests
 from sys import argv
@@ -14,9 +14,9 @@ if __name__ == "__main__":
         _data = {'q': q}
         url = 'http://0.0.0.0:5000/search_user'
         req = requests.post(url, data=_data).json()
-        if not req:
-            print("No result")
-        else:
+        if {'id', 'name'} <= req.keys():
             print ("[{}] {}".format(req.get('id'), req.get('name')))
+        else:
+            print("No result")
     except ValueError:
         print("Not a valid JSON")
