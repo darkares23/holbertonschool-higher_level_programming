@@ -9,7 +9,7 @@ if __name__ == "__main__":
     req = requests.get(url).json()
     commits = 0
     for line in req:
-        print("{}: {}".format(line['sha'], line['commit']['autor']['name']))
+        print("{}: {}".format(line['sha'], line['commit']['author']['name']))
         commits += 1
         if commits == 10:
             exit()
