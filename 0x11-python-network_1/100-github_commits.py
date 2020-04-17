@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+"""sends a request to the URL and displays the value of the X-Request-Id"""
 import requests
 from sys import argv
 
 
 if __name__ == "__main__":
-    url = "https://api.github.com/repos/" + argv[2] + "/" + argv[1] + "/commits"
-    _auth = (argv[1], argv[2])
+    aut = argv[2]
+    url = "https://api.github.com/repos/" + aut + "/" + argv[1] + "/commits"
     req = requests.get(url).json()
     commits = 0
     for line in req:
