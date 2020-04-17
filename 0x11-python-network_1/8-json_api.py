@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""takes in a URL and an email address,
-sends a POST request to the passed URL"""
-from sys import argv
+"""sends a request to the URL and displays the value of the X-Request-Id"""
 import requests
+from sys import argv
 
 
 if __name__ == "__main__":
