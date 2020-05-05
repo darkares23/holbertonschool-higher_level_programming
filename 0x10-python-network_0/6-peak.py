@@ -18,4 +18,3 @@ def find_peak(list_of_integers):
             if midE // 2 == 0:
                 midE = 2
         return
-            
