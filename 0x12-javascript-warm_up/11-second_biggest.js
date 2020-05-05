@@ -4,5 +4,5 @@ if (process.argv.length < 4) {
   console.log(0);
 } else {
   const args = process.argv.slice(2).sort().reverse();
-  console.log((args[1]));
+  console.log(paserInt(args[1]));
 }
