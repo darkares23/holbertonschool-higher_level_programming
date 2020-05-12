@@ -4,6 +4,7 @@ const url = process.argv[1];
 
 request
   .get(url)
-  .on('response', function (response) {
-    console.log('code: ' + response.statusCode);
+  .on('response', function (err, res) {
+    if (err) { console.log(err); }
+    console.log('code: ', res && res.statusCode);
   });
