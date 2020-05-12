@@ -1,10 +1,11 @@
 #!/usr/bin/node
-const Argv = process.argv.slice(2);
 const request = require('request');
-request(Argv[0], function (error, response, body) {
-  if (error) {
-    console.log(error);
+const episode = process.argv[2];
+
+request('http://swapi.co/api/films/' + episode, (err, res, body) => {
+  if (err) {
+    console.log(err);
   } else {
-    console.log('code: ' + response.statusCode);
+    console.log(JSON.parse(body).title);
   }
 });
